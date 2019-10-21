@@ -148,3 +148,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/git,maven,windows,java-web,intellij
+
+# Default ignored files
+/workspace.xml
