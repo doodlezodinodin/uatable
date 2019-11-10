@@ -5,24 +5,30 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Вход</title>
+    <title>Регистрация</title>
 </head>
 <body>
-    <h1>Вход</h1>
+    <h1>Регистрация</h1>
     <a href="/">Главная страница</a>
 
     <hr>
 
-    <form action="/signin" method="post">
+    <form action="/signUp" method="post">
         <label>
-            login: <input type="text" name="name">
+            Номер телефона: +380 <input type="number" name="numberPhone">
         </label>
         <br>
         <label>
-            pass: <input type="password" name="password">
+            Пароль: <input type="password" name="password">
         </label>
         <br>
-        <input type="submit">
+        <br>
+        <p>${errorMessage!""}</p>
+        <input type="submit" value="Зарегестрироваться">
     </form>
+
+    <hr>
+
+
 </body>
 </html>

@@ -8,15 +8,18 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import ua.antibyte.servlets.SignInServlet;
 import ua.antibyte.servlets.SignUpServlet;
+import ua.antibyte.servlets.UserPageServlet;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         SignInServlet signInServlet = new SignInServlet();
         SignUpServlet signUpServlet = new SignUpServlet();
+        UserPageServlet userPageServlet = new UserPageServlet();
 
         ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        contextHandler.addServlet(new ServletHolder(signInServlet), "/signin");
-        contextHandler.addServlet(new ServletHolder(signUpServlet), "/signup");
+        contextHandler.addServlet(new ServletHolder(signInServlet), "/signIn");
+        contextHandler.addServlet(new ServletHolder(signUpServlet), "/signUp");
+        contextHandler.addServlet(new ServletHolder(userPageServlet), "/userPage");
 
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setDirectoriesListed(true);
