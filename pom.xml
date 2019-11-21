@@ -37,6 +37,11 @@
             <artifactId>jetty-webapp</artifactId>
             <version>9.4.21.v20190926</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependency>
     </dependencies>
 
 </project>

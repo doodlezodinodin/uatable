@@ -1,6 +1,7 @@
 package ua.antibyte.servlets;
 
 import ua.antibyte.helpers.PageGenerator;
+import ua.antibyte.obj.User;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,12 +21,16 @@ public class SignUpServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        String numberPhone = req.getParameter("numberPhone");
-        String password = req.getParameter("password");
+        String userMobileNumber = req.getParameter("numberPhone");
+        String userPassword = req.getParameter("password");
 
         String errorMessage = "";
+        User user = null;
 
-        if (!numberPhone.isEmpty() && !password.isEmpty()) {
+        if (!userMobileNumber.isEmpty() && !userPassword.isEmpty()) {
+
+            user = new User(userMobileNumber, userPassword);
+
             res.setContentType("text/html;charset=UTF-8");
             res.getWriter().println(PageGenerator.getPage("userPage.html", null));
             res.setStatus(HttpServletResponse.SC_OK);
